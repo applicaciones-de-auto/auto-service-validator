@@ -6,7 +6,7 @@
 package org.guanzon.auto.validator.service;
 
 import org.guanzon.appdriver.base.GRider;
-import org.guanzon.auto.service.model.Model_Job_Order_Labor;
+import org.guanzon.auto.model.service.Model_JobOrder_Labor;
 
 /**
  *
@@ -16,10 +16,10 @@ public class Validator_JobOrder_Labor implements ValidatorInterface {
     GRider poGRider;
     String psMessage;
     
-    Model_Job_Order_Labor poEntity;
+    Model_JobOrder_Labor poEntity;
     
     public Validator_JobOrder_Labor(Object foValue){
-        poEntity = (Model_Job_Order_Labor) foValue;
+        poEntity = (Model_JobOrder_Labor) foValue;
     }
 
     @Override
