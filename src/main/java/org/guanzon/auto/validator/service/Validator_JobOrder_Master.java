@@ -71,7 +71,7 @@ public class Validator_JobOrder_Master  implements ValidatorInterface {
             return false;
         } else {
             if (poEntity.getWorkCtgy().trim().isEmpty()){
-                psMessage = "Work Categor is not set.";
+                psMessage = "Work Category is not set.";
                 return false;
             }
         }
