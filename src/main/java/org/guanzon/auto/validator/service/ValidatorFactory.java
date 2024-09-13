@@ -14,7 +14,8 @@ public class ValidatorFactory {
     public enum TYPE{
         JobOrder_Master,
         JobOrder_Labor,
-        JobOrder_Parts
+        JobOrder_Parts,
+        Intake_Technician
     }
     
     public static ValidatorInterface make(ValidatorFactory.TYPE foType, Object foValue){
@@ -25,6 +26,8 @@ public class ValidatorFactory {
                 return new Validator_JobOrder_Labor(foValue);
             case JobOrder_Parts:
                 return new Validator_JobOrder_Parts(foValue);
+            case Intake_Technician:
+                return new Validator_Intake_Technician(foValue);
             default:
                 return null;
         }
