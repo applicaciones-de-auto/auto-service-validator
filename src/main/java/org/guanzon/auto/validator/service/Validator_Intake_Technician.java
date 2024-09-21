@@ -10,20 +10,20 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import org.guanzon.appdriver.base.GRider;
-import org.guanzon.auto.model.service.Model_JobOrder_Labor;
+import org.guanzon.auto.model.service.Model_Intake_Technician;
 
 /**
  *
  * @author Arsiela
  */
-public class Validator_JobOrder_Labor implements ValidatorInterface {
+public class Validator_Intake_Technician implements ValidatorInterface {
     GRider poGRider;
     String psMessage;
     
-    Model_JobOrder_Labor poEntity;
+    Model_Intake_Technician poEntity;
 
-    Validator_JobOrder_Labor(Object foValue){
-        poEntity = (Model_JobOrder_Labor) foValue;
+    Validator_Intake_Technician(Object foValue){
+        poEntity = (Model_Intake_Technician) foValue;
     }
 
     @Override
@@ -53,19 +53,9 @@ public class Validator_JobOrder_Labor implements ValidatorInterface {
             }
         }
         
-        if(poEntity.getPayChrge()== null) {
-            psMessage = "Pay charge is not set.";
-            return false;
-        } else {
-            if (poEntity.getPayChrge().trim().isEmpty()){
-                psMessage = "Pay charge is not set.";
-                return false;
-            }
-        }
-        
 //        try {
 //        } catch (SQLException ex) {
-//            Logger.getLogger(Validator_JobOrder_Labor.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(Validator_Intake_Technician.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         
         return true;
@@ -97,7 +87,5 @@ public class Validator_JobOrder_Labor implements ValidatorInterface {
         LocalDate localDate = LocalDate.parse(val, date_formatter);
         return localDate;
     }
-    
-    
     
 }
