@@ -86,6 +86,38 @@ public class Validator_JobOrder_Master  implements ValidatorInterface {
                     return false;
                 }
             }
+        } else {
+            if(poEntity.getJobType()== null) {
+                psMessage = "Job Type is not set.";
+                return false;
+            } else {
+                if (poEntity.getJobType().trim().isEmpty()){
+                    psMessage = "Job Type is not set.";
+                    return false;
+                }
+            }
+            
+            if(poEntity.getLaborTyp()== null) {
+                psMessage = "Labor Type is not set.";
+                return false;
+            } else {
+                if (poEntity.getLaborTyp().trim().isEmpty()){
+                    psMessage = "Labor Type is not set.";
+                    return false;
+                }
+            }
+        }
+        
+        if(!poEntity.getPaySrce().equals("3")) {    // || !poEntity.getPaySrce().equals("0")
+            if(poEntity.getKMReadng()== null) {
+                psMessage = "Kilometer is not set.";
+                return false;
+            } else {
+                if (poEntity.getKMReadng() <= 0){
+                    psMessage = "Kilometer is not set.";
+                    return false;
+                }
+            }
         }
         
         if(poEntity.getSerialID()== null) {

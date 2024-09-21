@@ -64,6 +64,16 @@ public class Validator_JobOrder_Parts implements ValidatorInterface {
             }
         }
         
+        if(poEntity.getStockID()== null) {
+            psMessage = "Row "+poEntity.getEntryNo()+" Stock ID is not set.";
+            return false;
+        } else {
+            if (poEntity.getStockID().trim().isEmpty()){
+                psMessage = "Stock ID "+poEntity.getEntryNo()+" is not set.";
+                return false;
+            }
+        }
+        
 //        try {
 //        } catch (SQLException ex) {
 //            Logger.getLogger(Validator_JobOrder_Parts.class.getName()).log(Level.SEVERE, null, ex);
