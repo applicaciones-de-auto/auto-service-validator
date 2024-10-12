@@ -43,12 +43,32 @@ public class Validator_Intake_Technician implements ValidatorInterface {
             }
         }
         
+        if(poEntity.getDiagNo()== null) {
+            psMessage = "Job Order is not set.";
+            return false;
+        } else {
+            if (poEntity.getDiagNo().trim().isEmpty()){
+            psMessage = "Job Order is not set.";
+                return false;
+            }
+        }
+        
         if(poEntity.getLaborCde()== null) {
             psMessage = "Labor is not set.";
             return false;
         } else {
             if (poEntity.getLaborCde().trim().isEmpty()){
             psMessage = "Labor is not set.";
+                return false;
+            }
+        }
+        
+        if(poEntity.getWorkCtgy()== null) {
+            psMessage = "Work category is not set.";
+            return false;
+        } else {
+            if (poEntity.getWorkCtgy().trim().isEmpty()){
+            psMessage = "Work category is not set.";
                 return false;
             }
         }
